@@ -1,0 +1,23 @@
+.sc404page {
+  text-align: center;
+  width: 100vw;
+  height: calc(100vh - var(--height-header));
+  display: flex;
+  align-items: center;
+  .error {
+    font-family: dmb;
+    font-size: 18rem;
+    line-height: 16rem;
+    color: var(--main-cl);
+    margin-bottom: 15px;
+  }
+  .textbox {
+    .desc {
+      margin: 16px auto 40px;
+    }
+    .groupbtn {
+      justify-content: center;
+      gap: 24px;
+    }
+  }
+}

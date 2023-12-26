@@ -1,0 +1,55 @@
+.nav-m {
+  min-height: 600px;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-cl);
+  @include transition(var(--duration) opacity);
+  opacity: 0;
+  visibility: hidden;
+  &.--active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    li {
+      .btn {
+        width: fit-content;
+      }
+      a {
+        color: var(--white-cl);
+        text-transform: uppercase;
+      }
+      &:not(:last-child) a {
+        display: inline-block;
+        &.--active {
+          &::after {
+            content: "";
+            width: 100%;
+            height: 2px;
+            display: block;
+            background-color: var(--white-cl);
+          }
+        }
+      }
+    }
+  }
+  .blur {
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    max-width: initial;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

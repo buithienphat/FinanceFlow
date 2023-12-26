@@ -1,0 +1,88 @@
+.scpricinghome {
+  padding-bottom: 40px;
+}
+
+.sclistcard {
+  padding-bottom: 56px;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .card {
+    background-color: initial;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0;
+    overflow: initial;
+    p {
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 24px;
+      }
+    }
+  }
+}
+
+.scpricecard {
+  padding-bottom: 225px;
+  .container {
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  &__card {
+    padding: 48px 30px 42px;
+    background-color: var(--darkblue-cl);
+    border-radius: 40px;
+    &-price {
+      margin: 16px 0;
+    }
+    &-features {
+      margin-top: 40px;
+      li {
+        position: relative;
+        font-family: dmr;
+        padding-left: 22px;
+        margin-top: 16px;
+        &::before {
+          content: "";
+          width: 6px;
+          height: 6px;
+          background-color: var(--main-cl);
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          border-radius: 50%;
+        }
+      }
+    }
+    .btn {
+      display: flex;
+      margin-top: 54px;
+    }
+  }
+}
+
+@include sm {
+  .scpricecard {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@include xs {
+  .sclistcard {
+    padding-bottom: 48px;
+    .container {
+      grid-template-columns: 1fr;
+      gap: 38px;
+    }
+  }
+  .scpricecard {
+    padding-bottom: 80px;
+  }
+}

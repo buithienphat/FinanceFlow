@@ -1,0 +1,184 @@
+.sccontacthome {
+  padding-top: 80px;
+  padding-bottom: 52px;
+}
+
+.scinfo {
+  padding-bottom: 120px;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gap);
+  }
+  .groupinfo {
+    grid-column: 1/9;
+    padding-right: 13px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 25px;
+    .formgroup {
+      position: relative;
+      &:nth-child(5) {
+        grid-column: 1/-1;
+        margin-bottom: 52px;
+        span {
+          bottom: -80px;
+        }
+
+        textarea {
+          width: 100%;
+          height: 100%;
+          resize: none;
+          padding: 20px 25px;
+          border-radius: 14px;
+          background-color: var(--darkblue-cl);
+        }
+      }
+      label {
+        display: block;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        font-family: dmb;
+      }
+      input {
+        width: 100%;
+        border-radius: 100px;
+        background-color: var(--darkblue-cl);
+        height: 68px;
+        padding: 0 25px;
+      }
+      span {
+        position: absolute;
+        color: var(--red-cl);
+        bottom: -35px;
+        left: 10px;
+      }
+    }
+    .btn {
+      width: fit-content;
+    }
+  }
+
+  .row__content {
+    grid-column: 9/-1;
+    .textbox {
+      .heading {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
+
+.scfaq {
+  padding-bottom: 120px;
+  text-align: center;
+  .textbox {
+    margin-bottom: 120px;
+  }
+  &__row {
+    margin: 0 auto;
+    max-width: 872px;
+    padding: 32px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    &-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .title {
+        font-family: dmb;
+        font-size: var(--fs-faqs);
+        line-height: var(--lh-faqs);
+        letter-spacing: var(--ls-faqs);
+      }
+      span {
+        width: 27px;
+        height: 27px;
+        display: block;
+        position: relative;
+        cursor: pointer;
+        &::after {
+          content: "";
+          width: 100%;
+          height: 2px;
+          background-color: var(--white-cl);
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &::before {
+          content: "";
+          width: 2px;
+          height: 100%;
+          background-color: var(--white-cl);
+          position: absolute;
+          @include transition(var(--duration));
+        }
+
+        &.--active {
+          &::before {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+    &-answer {
+      margin-top: 16px;
+      text-align: left;
+      max-height: 0;
+      overflow: hidden;
+      @include transition(var(--duration) max-height);
+    }
+  }
+}
+
+@include sm {
+  .scinfo {
+    .container {
+      display: block;
+    }
+    .groupinfo {
+      margin-bottom: 48px;
+    }
+  }
+}
+
+@include xs {
+  .sccontacthome {
+    padding-top: 48px;
+    padding-bottom: 40px;
+  }
+
+  .scinfo {
+    padding-bottom: 80px;
+    .container {
+      display: block;
+    }
+    .groupinfo {
+      grid-template-columns: 1fr;
+      margin-bottom: 48px;
+      .formgroup {
+        &:nth-child(5) {
+          span {
+            bottom: -70px;
+          }
+        }
+        span {
+          bottom: -30px;
+        }
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  .scfaq {
+    padding-bottom: 106px;
+    .textbox {
+      margin-bottom: 32px;
+    }
+  }
+}
